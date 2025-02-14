@@ -1,0 +1,62 @@
+/* 폰트 */
+@font-face {
+  font-family: "yoonk";
+  src: url(../font/윤고딕310.woff);
+}
+html {
+  font-size: 15px;
+}
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+/* 소개 제목 & 내용 스타일 */
+#div_blank01 {
+  width: 100%;
+  height: 120px;
+}
+.title_1 {
+  text-align: center;
+  padding: 103px 0 24px;
+  font-weight: 300;
+  font-size: 2.533rem;
+  line-height: 51px;
+  font-family: "yoonk", "돋움", dotum, sans-serif;
+}
+.title_2 {
+  text-align: center;
+  padding-bottom: 92px;
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 26px;
+  font-family: "돋움", dotum, sans-serif;
+}
+
+/* 삽입 이미지 스타일 */
+#div_image {
+  overflow: hidden;
+  position: relative;
+  height: 460px;
+}
+#div_image_wrap {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  width: 100%;
+  height: 460px;
+}
+#image_bg {
+  position: absolute;
+  opacity: 1;
+  left: 50%;
+  top: 50%;
+  width: 110%;
+  margin: -35% 0 0 -50%;
+  transition: left, opacity;
+  transition: 500ms;
+}
+
+/* 연혁 */
+#div_history {
+  min-height: 400px;
+}
