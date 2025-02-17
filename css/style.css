@@ -67,6 +67,57 @@ input, button, textarea, select { font: inherit; }
 #header li:hover{
    text-decoration: underline;
 }
+
+
+#header li .nav_subs {
+   display: none;
+   opacity: 0;
+   position: fixed;
+   left: 0;
+   top: 81px;
+   width: 100%;
+   height: auto;
+   background-color: #fff;
+}
+#header li:nth-child(2):hover .nav_subs {
+   display: block;
+   opacity: 1;
+}
+#header li:nth-child(3):hover .nav_subs {
+   display: block;
+   opacity: 1;
+}
+#header li:nth-child(4):hover .nav_subs {
+   display: block;
+   opacity: 1;
+}
+#header li:nth-child(5):hover .nav_subs {
+   display: block;
+   opacity: 1;
+}
+#header li .nav_sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px 0;
+}
+#header li .nav_sub .sub_item {
+    display: flex;
+    flex-direction: column;
+}
+#header li .nav_sub .sub_item > span{
+   font-size: 13px;
+   padding: 10px;
+   font-family: 'yoonT';
+}
+#header li .nav_sub .sub_item > span:nth-child(1){
+   font-size: 17px;
+   padding-top: 10px;
+}
+
+
+
+
 #header li.nav:not(.nav_logo) > a::before{
    content: "";
    display: block;
@@ -90,7 +141,13 @@ input, button, textarea, select { font: inherit; }
    justify-content: center;
    margin-right: auto;
    margin-left: 0;
+   transition: .5s;
 }
+
+#header.scrolled .nav_logo {
+   opacity: 0;
+}
+
 #header li a{
    display: block;
    height: 80px;
@@ -141,9 +198,7 @@ input, button, textarea, select { font: inherit; }
    width: 240px;
    height: 200px;
    border-radius: 10px;
-   position: absolute;
-   right: 12%;
-   top: 100px;
+   position: fixed;
    background: #fff;
 }
 
