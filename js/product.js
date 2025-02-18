@@ -95,6 +95,7 @@ var span = document.getElementsByClassName("close")[0];
 var span2 = document.getElementsByClassName("close2")[0];
 var span3 = document.getElementsByClassName("close3")[0];
 var span4 = document.getElementsByClassName("close4")[0];
+var span5 = document.getElementsByClassName("close5")[0];
 
 document.querySelectorAll('#myModal3 a').forEach(function(link) {
   link.addEventListener('click', function(event) {
@@ -127,6 +128,12 @@ btn4.onclick = function() {
   document.body.style.overflow = "hidden"
 }
 
+btn5.onclick = function() {
+  event.preventDefault(); // 기본 링크 클릭 동작을 막음 (페이지 이동 방지)
+  modal5.style.display = "block";
+  document.body.style.overflow = "hidden"
+}
+
 // 닫기 버튼을 클릭하면 모달이 닫힘
 span.onclick = function() {
   modal.style.display = "none";
@@ -148,6 +155,11 @@ span4.onclick = function() {
   document.body.style.overflow = "auto"
 }
 
+span5.onclick = function() {
+  modal5.style.display = "none";
+  document.body.style.overflow = "auto"
+}
+
 // 모달 외부를 클릭하면 모달이 닫힘
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -164,6 +176,10 @@ window.onclick = function(event) {
   }
   if (event.target == modal4) {
     modal4.style.display = "none";
+    document.body.style.overflow = "auto"
+  }
+  if (event.target == modal5) {
+    modal5.style.display = "none";
     document.body.style.overflow = "auto"
   }
 }

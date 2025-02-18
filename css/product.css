@@ -421,8 +421,8 @@
 #modal {
   position: relative;
   width: 100%;
-  height: 700px;
-  background: red
+  height: 600px;
+  background: #F7F7F7;
 }
 
 #modal .container {
@@ -531,6 +531,26 @@
   left: 460px;
   font-size: 15px;
 }
+
+#openModal5 {
+  position: absolute;
+  left: 50%;
+  top: 160px;
+  width: 500px;
+  height: 80px;
+  background: #F8F8F8;
+  line-height: 80px;
+  border-radius: 15px;
+  padding-left: 30px;
+  font-size: 20px;
+  color: #222222;
+}
+
+#openModal5 span {
+  position: absolute;
+  left: 460px;
+  font-size: 15px;
+}
 /* 모달의 배경 */
 .modal {
   display: none; /* 모달 기본 상태는 숨김 */
@@ -555,11 +575,39 @@
   border-radius: 25px;
 }
 
+
+.modal-content h2, p {
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.modal-content p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #746A66;
+}
+
+.modal-content p span {
+  margin-top: 10px;
+  font-size: 10px;
+}
+
 #myModal2 .modal-content {
   height: 30%;
   margin-top: 15%;
 }
 
+#myModal2 .modal-content span {
+  position: relative;
+  top: 10px;
+  font-size: 11px;
+}
 #myModal3 .modal-content {
   height: 30%;
   margin-top: 15%;
@@ -586,30 +634,20 @@
   margin-top: 17%;
 }
 
-
-.modal-content h2, p {
-  position: relative;
-  left: 20px;
-  top: 20px;
-}
-
-.modal-content h2 {
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.modal-content p {
-  margin-top: 10px;
+#myModal4 .modal-content span {
   font-size: 15px;
-  color: #746A66;
+  font-weight: bold;
+  color: #005A96;
 }
 
-.modal-content p span {
-  margin-top: 10px;
-  font-size: 10px;
+#myModal5 .modal-content {
+  height: 80%;
+  margin-top: 5%;
 }
 
-/* 닫기 버튼 */
+#myModal5 .modal-content h2 {
+  margin-top: 30px;
+}
 .close {
   width: 25px;
   float: right;
@@ -629,3 +667,43 @@
   width: 25px;
   float: right;
 }
+
+.close5 {
+  width: 25px;
+  float: right;
+}
+
+/* btn */
+.btn {
+  position: absolute;
+  top: 450px;
+  left: 23%;
+  width: 340px;
+  height: 90px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  
+}
+.btn div {
+  position: relative;
+  left: 90px;
+  bottom: 30px;
+  color: #747474;
+}
+
+.btn span {
+ font-weight: bold;
+ color: #222222;
+}
+.btn img {
+  position: relative;
+  top: 25px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+#modal .btn:nth-of-type(2) {
+  left: 42%;
+}
+
