@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>카카오뱅크</title>
     <link rel="icon" sizes="256x256" href="img/favicon.gif" />
+
+    <!-- ++ -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/intro.css" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/intro.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
@@ -56,8 +60,8 @@
 
     <!-- 소개 제목 & 내용 -->
     <div id="div_title">
-      <p class="title_1">일상에서 더 쉽게, 더 자주 이용하는<br />나만의 은행</p>
-      <p class="title_2">
+      <p class="title_intro1">일상에서 더 쉽게, 더 자주 이용하는<br />나만의 은행</p>
+      <p class="title_intro2">
         카카오뱅크는 사람과 은행의 만남이 더 쉽게, 더 자주 일어나야 한다고 믿습니다.<br />
         사용자 중심의 혁신적인 기술을 통해 일상 속 어떤 순간에서도 유용한 나만의 은행.<br />
         카카오뱅크는 또 하나의 은행이 아닌 '은행의 새로운 시작' 입니다.
@@ -72,6 +76,114 @@
     </div>
 
     <!-- 연혁 -->
-    <div id="div_history"></div>
+    <div id="div_history">
+      <div id="history0" class="historyrow"><ul id="historylist0" class="historylist"></ul></div>
+      <div id="history1" class="historyrow"><ul id="historylist1" class="historylist"></ul></div>
+      <div id="history2" class="historyrow"><ul id="historylist2" class="historylist"></ul></div>
+      <div id="history3" class="historyrow"><ul id="historylist3" class="historylist"></ul></div>
+      <div id="history4" class="historyrow"><ul id="historylist4" class="historylist"></ul></div>
+      <div id="history5" class="historyrow"><ul id="historylist5" class="historylist"></ul></div>
+      <div id="history6" class="historyrow"><ul id="historylist6" class="historylist"></ul></div>
+      <div id="history7" class="historyrow"><ul id="historylist7" class="historylist"></ul></div>
+      <div id="history8" class="historyrow"><ul id="historylist8" class="historylist"></ul></div>
+    </div>
+
+    <!-- 브랜드 동영상 -->
+    <div id="div_brandvideo">
+      <h4 class="title_brandvideo">브랜드 영상</h4>
+      <div id="div_brandvideowrap">
+        <div class="div_row1video" id="brand_video1">
+          <a href="javascript:;" id="video_anchor1">
+            <img src="/img/intro/kakaoimg0003.png" alt="카카오 브랜드 동영상1" class="thumbnail" />
+          </a>
+          <p>#또 한 번 은행을 새롭게</p>
+          <span>카카오뱅크 주택담보대출 전국 광역시까지 확대</span><br />
+          <span>주택담보대출의 복잡한 과정을 더 쉽고, 친절하게!</span>
+        </div>
+        <div class="div_row1video" id="brand_video2">
+          <a href="javascript:;" id="video_anchor2">
+            <img src="/img/intro/kakaoimg0004.png" alt="카카오 브랜드 동영상2" class="thumbnail" />
+          </a>
+          <p>#세상 모든 모임</p>
+          <span>친구, 가족, 연인, 동호인끼리</span><br />
+          <span>요즘은 다 여기서 모임</span>
+        </div>
+        <div class="div_row1video" id="brand_video3">
+          <a href="javascript:;" id="video_anchor3">
+            <img src="/img/intro/kakaoimg0005.png" alt="카카오 브랜드 동영상3" class="thumbnail" />
+          </a>
+          <p>#이미 모두의 은행</p>
+          <span>한 사람, 한 사람을 위해 시작한 은행이</span><br />
+          <span>더 많은 사람들이 찾는 모두의 은행이 되었습니다.</span>
+        </div>
+        <div class="div_row2text" id="brand_text1"></div>
+      </div>
+    </div>
+
+    <!-- BI 소개 -->
+    <div id="div_brand">
+      <h4 class="title_brand">BI소개</h4>
+      <div id="brandimage_container">
+        <img src="/img/intro/kakaoimg0007.png" />
+      </div>
+      <div class="div_brand_p">
+        <p id="p_bi1">Symbol & Wordmark</p>
+        <p id="p_bi2">내가 (I) 중심이 되는 은행 (B)을 형상화한 심볼과 고객중심 DNA를 반영한 워드마크</p>
+      </div>
+      <div class="div_brand_download">
+        <button id="btn_download1">GUIDE 파일 다운로드</button>
+        <button id="btn_download2">BRAND ASSET 파일 다운로드</button>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+      <div class="footerdiv2">
+        <a href="https://www.kakaobank.com/Corp/Policy/Service" target="_blank"><span class="footerspantype_1">모바일뱅킹 서비스 이용약관</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Corp/Policy/EBanking" target="_blank"><span class="footerspantype_1">전자금융거래 기본약관</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Corp/Policy/LocationService" target="_blank"><span class="footerspantype_1 footerbold">위치기반 서비스 이용약관</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Corp/Policy/Privacy/Graphic" target="_blank"><span class="footerspantype_1 footerbold">개인정보처리방침</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Help/ConsumerProtection/OnlineComplaints/Ask" target="_blank"><span class="footerspantype_1 footerbold">전자민원접수</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Corp/Policy/ProtectedFinancial" target="_blank"><span class="footerspantype_1">보호금융상품등록부</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Help/Documents/ProductDeclaration/Manual" target="_blank"><span class="footerspantype_1">상품공시실</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/IR/Announcement/Dart" target="_blank"><span class="footerspantype_1">경영공시</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Corp/News/Notices/pages/1" target="_blank"><span class="footerspantype_1">공지사항</span></a>
+      </div>
+      <div class="footerdiv3">
+        <a href="https://www.kakaobank.com/Corp/Policy/Cert/CertCps" target="_blank"><span class="footerspantype_1"> 전자서명인증업무준칙</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Corp/Policy/Cert/CertTerms" target="_blank"><span class="footerspantype_1"> 카카오뱅크 인증서 서비스 이용약관</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+        <a href="https://www.kakaobank.com/Corp/Policy/Cert/CertPmp" target="_blank"><span class="footerspantype_1 footerbold">카카오뱅크 인증서 서비스 개인정보처리방침</span></a>
+        <a href="#" class="anchor_no"><span class="footerspantype_2">｜</span></a>
+      </div>
+      <div class="footerdiv4">
+        <span>(주)카카오뱅크 윤호영 사업자번호 375-88-00197</span>
+        <span class="footerbold">대표전화 1599-3333</span>
+        <span>(해외 +82-2-6420-3333)</span>
+      </div>
+      <div class="footerdiv5">
+        <span>Copyright © KakaoBank Corp. All rights reserved.</span>
+      </div>
+      <div class="footerdiv6">
+        <img src="img/webaccessibility.png" alt="WEB접근성" id="footerimg1" />
+        <span>웹 접근성 품질인증</span>
+        <img src="img/web_trust_seal.png" alt="웹신뢰성" id="footerimg2" />
+        <span>웹 트러스트 인증</span>
+        <div class="footerdiv7">
+          <a href="https://www.facebook.com/kakaobank.official" target="_blank"><img src="img/footerimg01.png" alt="footer페이스북" /></a>
+          <a href="https://www.instagram.com/kakaobank.official/" target="_blank"><img src="img/footerimg02.png" alt="footer인스타" /></a>
+          <a href="https://www.youtube.com/kakaobank" target="_blank"><img src="img/footerimg03.png" alt="footer유튜브" /></a>
+          <a href="https://brunch.co.kr/@kakaobank" target="_blank"><img src="img/footerimg04.png" alt="footer브런치" /></a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
