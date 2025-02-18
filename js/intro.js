@@ -69,4 +69,54 @@ $(document).ready(function () {
     download2.click();
     document.body.removeChild(download2);
   });
+
+  // 네비게이션 바  : scrolltop이 1 이상이면 darkmode 해제
+
+  $(window).scroll(function () {
+    var scrollposition = $(window).scrollTop();
+
+    console.log("window.scrollTop : " + $(window).scrollTop());
+    console.log("window.height : " + $(window).height());
+
+    if ($(window).scrollTop() == 0) {
+      $("#header").css("background-color", "#313955");
+      $("#header").css("border-bottom", "1px solid rgba(255, 255, 255, 0.1)");
+      $(".nav > a").css("color", "white");
+      $("#header .dropdown_btn").css("background", "#2d344a");
+      $("#header .dropdown_btn").css("border", "1px solid rgba(34, 34, 34, 0.1)");
+      $("#header .dropdown_btn").css("color", "white");
+      $("#header .nav_global a").css("background", "url(../img/nav_logo_white2.svg) no-repeat");
+      $("#header .dropdown_btn").addClass("btnafter_scr");
+    } else {
+      $("#header").css("background-color", "white");
+      $("#header").css("border-bottom", "1px solid rgba(0, 0, 0, 0.1)");
+      $(".nav > a").css("color", "black");
+      $("#header .dropdown_btn").css("background", "rgba(244, 244, 244, 0.8)");
+      $("#header .dropdown_btn").css("border", "1px solid rgba(229, 229, 229, 0.8)");
+      $("#header .dropdown_btn").css("color", "black");
+      $("#header .nav_global a").css("background", "url(../img/icon_eng.svg) no-repeat");
+      $("#header .dropdown_btn").removeClass("btnafter_scr");
+    }
+  });
+
+  $(".nav > a").mouseenter(function () {
+    $("#header").css("background-color", "white");
+    $("#header").css("border-bottom", "1px solid rgba(0, 0, 0, 0.1)");
+    $(".nav > a").css("color", "black");
+    $("#header .dropdown_btn").css("background", "rgba(244, 244, 244, 0.8)");
+    $("#header .dropdown_btn").css("border", "1px solid rgba(229, 229, 229, 0.8)");
+    $("#header .dropdown_btn").css("color", "black");
+    $("#header .nav_global a").css("background", "url(../img/icon_eng.svg) no-repeat");
+    $("#header .dropdown_btn").removeClass("btnafter_scr");
+  });
+  $(".nav > a").mouseleave(function () {
+    $("#header").css("background-color", "#313955");
+    $("#header").css("border-bottom", "1px solid rgba(255, 255, 255, 0.1)");
+    $(".nav > a").css("color", "white");
+    $("#header .dropdown_btn").css("background", "#2d344a");
+    $("#header .dropdown_btn").css("border", "1px solid rgba(34, 34, 34, 0.1)");
+    $("#header .dropdown_btn").css("color", "white");
+    $("#header .nav_global a").css("background", "url(../img/nav_logo_white2.svg) no-repeat");
+    $("#header .dropdown_btn").addClass("btnafter_scr");
+  });
 });

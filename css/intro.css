@@ -226,7 +226,7 @@ iframe {
   height: 140px;
 }
 
-/* bi소개 - 다운로드  */
+/* BI소개 - 다운로드  */
 
 #btn_download1 {
   background-color: #fafafa;
@@ -253,3 +253,59 @@ iframe {
   font-size: 0.85rem;
   cursor: pointer;
 }
+
+/* 네비게이션 바 - 별도 적용 부분*/
+#header {
+  background-color: #313955;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 400ms;
+}
+#header .nav_logo a {
+  background: url(../img/nav_logo_white.svg);
+  transition: 400ms;
+}
+#header .dropdown_btn {
+  background: #2d344a;
+  border: 1px solid rgba(34, 34, 34, 0.1);
+  color: white;
+  transition: 400ms;
+}
+.btnafter_scr::after {
+  background: url(../img/svg_line_arrow_down_w.svg) !important;
+}
+#header .nav_global a {
+  background: url(../img/nav_logo_white2.svg) no-repeat;
+  transition: 400ms;
+}
+
+.nav > a {
+  color: white;
+  transition: 400ms;
+}
+
+#header li.nav:not(.nav_logo) > a::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 78px;
+  opacity: 0;
+}
+
+#header li.nav:not(.nav_logo) > #a_1::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 78px;
+  opacity: 1;
+}
+
+#header.scrolled li.nav:not(.nav_logo) > #a_1::before {
+  background-color: #000;
+}
+
