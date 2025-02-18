@@ -62,7 +62,6 @@ input, button, textarea, select { font: inherit; }
    margin: 0 10px;
    text-align: center;
    white-space: nowrap;
-   cursor: pointer;
 }
 #header li:hover{
    text-decoration: underline;
@@ -100,6 +99,8 @@ input, button, textarea, select { font: inherit; }
     flex-direction: row;
     justify-content: space-evenly;
     padding: 20px 0;
+    width: 1000px;
+    margin: 0 auto;
 }
 #header li .nav_sub .sub_item {
     display: flex;
@@ -114,7 +115,20 @@ input, button, textarea, select { font: inherit; }
    font-size: 17px;
    padding-top: 10px;
 }
+#header li .nav_sub .sub_item span > a:hover {
+   text-decoration: underline;
+}
 
+#header li .nav_sub .sub_item span.link > a::after {
+   content: "";
+   background: url(../img/svg_line_outlink.svg);
+   width: 12px;
+   height: 12px;
+   display: inline-block;
+   background-size: 12px;
+   vertical-align: middle;
+   margin-left: 6px;
+}
 
 
 
@@ -148,7 +162,7 @@ input, button, textarea, select { font: inherit; }
    opacity: 0;
 }
 
-#header li a{
+#header li > a{
    display: block;
    height: 80px;
    line-height: 5em;
@@ -258,3 +272,111 @@ input, button, textarea, select { font: inherit; }
    #header .nav_global a:hover{
       opacity: 0.5;
 }
+
+
+.footer {
+   padding-top: 20px;
+   width: 100%;
+   height: 200px;
+   background-color: #f0f0f0;
+   font-family: "yoonT", "돋움", dotum, sans-serif;
+ }
+ 
+ .footerdiv2 {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-evenly;
+   margin: 0px auto;
+   width: 1000px;
+ }
+ .footerdiv3 {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: flex-start;
+   margin: 0px auto;
+   width: 1000px;
+ }
+ .footerspantype_1 {
+   color: black;
+   font-size: 13px;
+ }
+ .footerspantype_2 {
+   font-size: 13.5px;
+   color: rgba(71, 71, 71, 0.315);
+ }
+ .anchor_no {
+   pointer-events: none;
+ }
+ .footerbold {
+   font-weight: bold;
+ }
+ .footerdiv4 {
+   padding-top: 20px;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: flex-start;
+   margin: 0px auto;
+   width: 1000px;
+ }
+ .footerdiv4 span {
+   font-size: 12px;
+   padding: 0 6px 0 0;
+   color: #888;
+   text-align: left;
+ }
+ .footerdiv4 .footerbold {
+   font-size: 12px;
+   padding: 0 6px 0 0;
+   color: #1a1919;
+   text-align: left;
+   font-weight: normal;
+ }
+ .footerdiv5 {
+   padding-top: 6px;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: flex-start;
+   margin: 0px auto;
+   width: 1000px;
+ }
+ .footerdiv5 span {
+   font-size: 12px;
+   color: #888;
+   text-align: left;
+   font-weight: 700;
+ }
+ .footerdiv6 {
+   position: relative;
+   padding-top: 20px;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: flex-start;
+   margin: 0px auto;
+   width: 1000px;
+ }
+ .footerdiv6 span {
+   font-size: 14px;
+   color: #5c5a5a;
+   text-align: left;
+   font-weight: bold;
+   margin-right: 15px;
+   line-height: 46px;
+ }
+ #footerimg1 {
+   width: 46px;
+   height: auto;
+   margin-right: 15px;
+ }
+ #footerimg2 {
+   width: 46px;
+   height: auto;
+   margin-right: 15px;
+ }
+ .footerdiv7 {
+   position: absolute;
+   right: 20px;
+   bottom: 0px;
+ }
+ .footerdiv7 a img {
+   margin-right: 8px;
+ }
