@@ -1,0 +1,104 @@
+/* 기본 스타일 */
+body {
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* 배경색을 밝은 회색으로 */
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 32px;
+  color: #333;
+  text-align: center; /* 제목 중앙 정렬 */
+  margin-bottom: 20px;
+}
+
+input.form-control {
+  border-radius: 25px;  /* 둥글게 */
+  border: 2px solid #FFCD00;  /* 카카오뱅크 노란색 테두리 */
+  padding: 15px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border 0.3s, box-shadow 0.3s;  /* 효과 전환 */
+}
+
+input.form-control:focus {
+  border-color: #FFCD00;  /* 포커스 시에도 노란색 테두리 유지 */
+  box-shadow: 0 0 8px rgba(255, 205, 0, 0.6);  /* 포커스 시 노란색 쉐도우 */
+}
+
+/* 네비게이션 스타일 */
+.navbar {
+  background-color: #ffcd00; /* 카카오뱅크 주황색 */
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #333 !important;
+  font-size: 24px; /* 크기 키움 */
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffcd00; /* 메뉴 hover 시 주황색 */
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffcd00; /* active 탭에 주황색 */
+  font-weight: bold;
+}
+
+/* 탭 스타일 */
+.nav-pills .nav-link {
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav-pills .nav-link.active {
+  border-color: #d3d3d3; /* 활성화된 탭에 옅은 회색 줄 추가 */
+  color: #ffcd00; /* 활성화된 탭의 텍스트 색상도 주황색 */
+}
+
+.nav-pills .nav-link:hover {
+  border-color: #d3d3d3; /* 호버 시에도 옅은 회색 줄 표시 */
+}
+
+/* FAQ 아코디언 */
+.accordion-button {
+  background-color: #fff;
+  color: #333;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #ffcd00;
+  color: #fff;
+}
+
+.accordion-item {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.accordion-body {
+  padding: 15px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
