@@ -243,7 +243,7 @@ select {
   flex-flow: row wrap;
   justify-content: space-evenly;
   margin: 0px auto;
-  width: 1150px;
+  width: 1000px;
 }
 .footerdiv3 {
   padding-left: 10px;
@@ -251,7 +251,7 @@ select {
   flex-flow: row wrap;
   justify-content: flex-start;
   margin: 0px auto;
-  width: 1150px;
+  width: 1000px;
 }
 .footerspantype_1 {
   color: black;
@@ -273,7 +273,7 @@ select {
   flex-flow: row wrap;
   justify-content: flex-start;
   margin: 0px auto;
-  width: 1150px;
+  width: 1000px;
 }
 .footerdiv4 span {
   font-size: 12px;
@@ -294,7 +294,7 @@ select {
   flex-flow: row wrap;
   justify-content: flex-start;
   margin: 0px auto;
-  width: 1150px;
+  width: 1000px;
 }
 .footerdiv5 span {
   font-size: 12px;
@@ -309,7 +309,7 @@ select {
   flex-flow: row wrap;
   justify-content: flex-start;
   margin: 0px auto;
-  width: 1150px;
+  width: 1000px;
 }
 .footerdiv6 span {
   font-size: 14px;
