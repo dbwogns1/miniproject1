@@ -337,7 +337,7 @@
 
 #ani .container:nth-child(5) .img-box {
   top: 0;
-  left: 53%;
+  left: 55%;
   width: 400px;
 }
 
@@ -414,7 +414,6 @@
   font-size: 19px;
   font-weight: 400px;
   border-radius: 15px;
-
 }
 
 /* modal */
@@ -707,3 +706,48 @@
   left: 42%;
 }
 
+@media (max-width :1300px) {
+  #main .container div:nth-child(1) p{
+    position: relative;
+    top:5px;
+    margin-right: 50px;
+  }
+  #main .container div:nth-child(2) p{
+    position: relative;
+    top: 5px;
+    margin-right: 45px;
+  }
+  #ani .container .text-box {
+    left: 100px;
+    top: 150px;
+  }
+  #qna .container h2 {
+    position: absolute;
+    left: 90px;
+  }
+  #qna .container .text-box {
+    position: absolute;
+    left: 90px;
+  }
+  
+  #qna .container a {
+    position: absolute;
+    left: 90px;
+  }
+
+  #modal .container #openModal,#openModal2,#openModal3 {
+    left: 140px;
+  }
+  #modal .container #openModal4,#openModal5 {
+    left: 660px;
+  }
+
+  #modal .btn:nth-of-type(1) {
+    position: absolute;
+    left: 140px;
+  }
+  #modal .btn:nth-of-type(2) {
+    position: absolute;
+    left: 490px;
+  }
+}
