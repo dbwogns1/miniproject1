@@ -62,7 +62,31 @@ input, button, textarea, select { font: inherit; }
    margin: 0 10px;
    text-align: center;
    white-space: nowrap;
+   position: relative;
 }
+#header li:before{
+   background: transparent;
+   z-index: 1;
+   width: 100px;
+   height: 80px;
+   position: absolute;
+   left: -10px;
+   cursor: pointer;
+}
+#header li:nth-child(2):before{
+   content: "";
+}
+#header li:nth-child(3):before{
+   content: "";
+}
+#header li:nth-child(4):before{
+   content: "";
+}
+#header li:nth-child(5):before{
+   content: "";
+}
+
+
 #header li:hover{
    text-decoration: underline;
 }
@@ -142,7 +166,7 @@ input, button, textarea, select { font: inherit; }
    top: 78px;
    opacity: 0;
 }
-#header li:not(.nav_logo) a:hover::before{
+#header li:not(.nav_logo):hover a::before{
    opacity: 1;
 }
 
@@ -167,6 +191,7 @@ input, button, textarea, select { font: inherit; }
    height: 80px;
    line-height: 5em;
    font-family: "yoonT";
+   font-size: 16px;
 }
 #header .nav_logo a{
   width: 116px;
@@ -205,25 +230,26 @@ input, button, textarea, select { font: inherit; }
 
 
 #header .nav_dropdown {
-   display: none;
-}
-#header .nav_dropdown.on {
-   display: block;
+   top: 20.7%;
+   left: 72%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   pointer-events: none;
    width: 240px;
    height: 200px;
    border-radius: 10px;
    position: fixed;
    background: #fff;
-   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
-#header .nav_dropdown.on li {
+#header .nav_dropdown li {
    width: 100%;
    text-align: left;
    height: 50px;
    margin: 0;
    display: flex;
    align-items: center;
+   cursor: pointer;
 }
 
 #header .nav_dropdown.on li:nth-child(1) {
@@ -241,11 +267,12 @@ input, button, textarea, select { font: inherit; }
    background: #F7F7F7;
 }
 
-#header .nav_dropdown.on li a {
+#header .nav_dropdown li a {
    display: inline;
    line-height: 0;
    height: 12px;
    text-indent: 15px;
+   font-size: 13px;
 }
 
 #header .nav_dropdown.on li a::after {
@@ -381,3 +408,10 @@ input, button, textarea, select { font: inherit; }
  .footerdiv7 a img {
    margin-right: 8px;
  }
+
+ @media screen and (max-width: 1281px) {
+   #header .nav_dropdown {
+      top: 26.5%;
+      left: 83%;
+   }
+}
