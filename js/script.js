@@ -24,25 +24,43 @@ document.addEventListener('DOMContentLoaded', function () {
   // 헤더 관련 사이트 클릭시 나타나는 드롭다운 기능
   const button = document.getElementById("drop_btn");
   const dropdown = document.getElementById("drop_menu");
+  const menuItems = document.querySelectorAll(".nav_item .nav_li"); // 모든 li 요소 선택
 
-  function updateDropdownPosition() {
-    const rect = button.getBoundingClientRect();
+  // 팝업 상태 확인 변수
+  let isPopupVisible = false;
 
-    dropdown.style.top = `${rect.bottom + 40}px`; // 버튼 바로 아래에 위치
-    dropdown.style.left = `${rect.left + rect.width / 2}px`; // 버튼 중앙 정렬
-    dropdown.style.transform = "translateX(-50%)"; // 정확한 중앙 정렬
-  }
+  // 버튼 클릭 시 팝업 열기/닫기 토글
+  button.addEventListener("click", (event) => {
+    isPopupVisible = !isPopupVisible; // 상태 반전
+    dropdown.style.opacity = isPopupVisible ? "1" : "0"; // 투명도 변경
+    dropdown.style.pointerEvents = isPopupVisible ? "auto" : "none"; // 클릭 가능 여부 변경
+    event.stopPropagation(); // 이벤트 전파 방지
+  });
 
-  button.addEventListener("click", function () {
-    if (dropdown.style.display === "block") {
-      dropdown.style.display = "none";
-      window.removeEventListener("scroll", updateDropdownPosition); // 위치 업데이트 중지
-      window.removeEventListener("resize", updateDropdownPosition); // 창 크기 변경 시 업데이트 중지
-    } else {
-      dropdown.style.display = "block";
-      updateDropdownPosition(); // 위치 업데이트
-      window.addEventListener("scroll", updateDropdownPosition); // 스크롤 시 위치 업데이트
-      window.addEventListener("resize", updateDropdownPosition); // 창 크기 변경 시 업데이트
+  // 문서 클릭 시 팝업 닫기
+  document.addEventListener("click", () => {
+    if (isPopupVisible) {
+      button.classList.remove('active')
+      isPopupVisible = false;
+      dropdown.style.opacity = "0";
+      dropdown.style.pointerEvents = "none";
     }
+  });
+
+  // 팝업 내부 클릭 시 닫히지 않도록 설정
+  dropdown.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
+  // 모든 li 요소에 마우스가 올라가면 팝업 닫기
+  menuItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      if (isPopupVisible) {
+        button.classList.remove('active')
+        isPopupVisible = false;
+        dropdown.style.opacity = "0";
+        dropdown.style.pointerEvents = "none";
+      }
+    });
   });
 });
