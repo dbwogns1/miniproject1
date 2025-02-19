@@ -1,0 +1,194 @@
+/* 배경을 3분의 1 노란색으로 */
+body {
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background-color: #FFCD00; /* 카카오뱅크 노란색 */
+  height: 33vh; /* 화면의 3분의 1 높이로 설정 */
+  padding: 0;
+}
+
+.cont{
+  background-color: #FFCD00;
+}
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 100px 0px;
+  background-color: #FFCD00;
+}
+
+
+.tab-content mt-3 {
+  border-radius: 25px;
+  border: none;
+  padding: 40px 50px;
+  gap: 500;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+h2 {
+  font-size: 32px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input.form-control {
+  border-radius: 25px;
+  border: none;
+  padding: 60px 50px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input.form-control:focus {
+  border: 2px solid #FFCD00;
+  box-shadow: 0 0 8px rgba(255, 205, 0, 0.6);
+}
+
+
+
+/* 네비게이션 스타일 */
+.navbar {
+  background-color: #787878; /* 카카오뱅크 주황색 */
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #333 !important;
+  font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #969696;
+}
+
+.navbar-nav .nav-link.active {
+  color: #969696;
+  font-weight: bold;
+}
+
+/* 탭 스타일 */
+.nav-pills .nav-link {
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav-pills .nav-link.active {
+  border-color: #969696;
+  color: #FFCD00;
+}
+
+.nav-pills .nav-link:hover {
+  border-color: #969696;
+}
+
+/* FAQ 아코디언 */
+.accordion-button {
+  background-color: #e5e5e5;
+  color: #2e2e2e;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #a09f9f;
+  color: #282828;
+}
+
+.accordion-item {
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: px;
+  border-radius: 10px;
+}
+
+.accordion-body {
+  padding: 15px;
+  background-color: #969696;
+  font-size: 14px;
+}
+
+.search_icon {
+  width: 20px;
+  height: 20px;
+  background: url(../img/help/search.png);
+  background-size: contain;
+  background-color: #ffffff;
+}
+
+/* 검색창 스타일 */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ffffff; /* 기본 테두리를 흰색으로 설정 */
+  border-radius: 0; /* 둥근 모서리 없애기 */
+  padding: 21px 5px;
+  transition: border 0.3s, box-shadow 0.3s;
+  flex-direction: row;
+}
+
+.search-container:focus-within {
+  border: 2px solid #ffffff; /* 클릭할 때 흰색 테두리 유지 */
+  box-shadow: 0 0 8px rgb(254, 254, 254);
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  padding: 2px;
+  background: transparent;
+  margin: 0;
+  border-radius: 0;
+}
+
+.search-container i {
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+
+.nav item {
+  display: flex;
+  width: 20px;
+}
+element.style {
+  
+  justify-content: space-evenly;
+  display: flex
+;
+}
+
+
+
+@media (max-width: 768px) {
+  .custom-nav {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2개씩 정렬 */
+      gap: 8px;
+      justify-content: center;
+  }
+
+  .nav-item {
+      text-align: center;
+  }
+}
+
