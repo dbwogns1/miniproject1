@@ -1,40 +1,5 @@
 $(document).ready(function(){
   
-  // // 슬라이더
-
-  // $(".slider").slick({
-  //   slidesToShow: 3,        // 한 번에 보이는 텍스트 개수
-  //   slidesToScroll: 1,      // 몇 개씩 움직일지
-  //   autoplay: true,         // 자동 재생
-  //   autoplaySpeed: 0,       // 자동 재생 속도 (0으로 설정하여 끊김 없이 이동)
-  //   speed: 2000,            // 부드러운 흐름 속도 (높을수록 느려짐)
-  //   infinite: true,         // 무한 반복
-  //   cssEase: 'linear',      // 부드러운 이동 적용 (Marquee 효과)
-  //   variableWidth: true,    // 텍스트 크기에 맞춰 유동적 배치
-  // });
-
-  
-  const marquee = document.querySelector(".marquee");
-  const content = document.querySelector(".marquee-content");
-  
-  // 원본 콘텐츠 복제
-  const clone = content.cloneNode(true);
-  marquee.appendChild(clone);
-
-  let speed = 1; // 속도 조절
-  let pos = 0;
-
-  function moveMarquee() {
-    pos -= speed;
-    if (pos <= -content.clientWidth) {
-      pos = 0; // 원래 위치로 되돌림 (끊김 없이)
-    }
-    content.style.transform = `translateX(${pos}px)`;
-    clone.style.transform = `translateX(${pos}px)`;
-    requestAnimationFrame(moveMarquee);
-  }
-
-  moveMarquee();
 
 // ani
 
@@ -71,6 +36,7 @@ $(document).ready(function(){
 
   });
 
+  
   // 비디오가 애니메이션 후에 재생되도록 설정
   $(".img-box").on("animationend", function() {
     var videoElement = $(this).find("video")[0];
@@ -78,6 +44,37 @@ $(document).ready(function(){
       videoElement.play();  // 애니메이션 끝난 후 비디오 재생
     }
   });
+
+  // 2dep 
+  
+  const deptext = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext");
+  const deptext1 = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext1");
+  const deptext2 = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext2");
+
+  // "보낼 금액"이 사라지는 애니메이션
+setTimeout(() => {
+  deptext.classList.add("hide"); // "보낼 금액"을 사라지게 함
+}, 1000);
+
+// "36,000원" 보이기
+setTimeout(() => {
+  deptext1.classList.add("show"); // "36,000원"이 보이게 함
+}, 2000); // 2초 후에 deptext1 보이기
+
+
+ 
+  // 3dep 애니메이션 실행 함수
+  
+  // svg 애니메이션
+  let path = document.querySelector("svg path");
+
+  setTimeout(() => {
+    path.style.strokeDashoffset = "0";
+}, 600);
+
+
+
+
 
 // modla
 // 모달 요소와 버튼
