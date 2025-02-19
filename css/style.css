@@ -67,23 +67,32 @@ input, button, textarea, select { font: inherit; }
 #header li:before{
    background: transparent;
    z-index: 1;
-   width: 100px;
+   width: 10px;
    height: 80px;
    position: absolute;
    left: -10px;
    cursor: pointer;
-   pointer-events: none;
 }
-#header li:nth-child(2):before{
-   content: "";
+#header li::after{
+   background: transparent;
+   z-index: 1;
+   width: 10px;
+   height: 80px;
+   position: absolute;
+   left: 80px;
+   top: 0;
+   cursor: pointer;
 }
-#header li:nth-child(3):before{
-   content: "";
-}
-#header li:nth-child(4):before{
-   content: "";
-}
+#header li:nth-child(2):before,
+#header li:nth-child(3):before,
+#header li:nth-child(4):before,
 #header li:nth-child(5):before{
+   content: "";
+}
+#header li:nth-child(2)::after,
+#header li:nth-child(3)::after,
+#header li:nth-child(4)::after,
+#header li:nth-child(5)::after{
    content: "";
 }
 
