@@ -184,6 +184,9 @@ window.onclick = function(event) {
   }
 }
 
+$("#modal .btn").on('click',function(event) {
+  event.preventDefault();
+});
 
 
 });
