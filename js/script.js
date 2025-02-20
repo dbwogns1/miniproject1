@@ -25,8 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const button = document.getElementById("drop_btn");
   const dropdown = document.getElementById("drop_menu");
   const menuItems = document.querySelectorAll(".nav_item .nav_li"); // 모든 li 요소 선택
-
-  // 팝업 상태 확인 변수
   let isPopupVisible = false;
 
   // 버튼 클릭 시 팝업 열기/닫기 토글
