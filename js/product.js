@@ -44,37 +44,104 @@ $(document).ready(function(){
       videoElement.play();  // 애니메이션 끝난 후 비디오 재생
     }
   });
+  
+  //#scroll2 .img-box가 애니메이션 된 후에 실행
+  $("#scroll2 .img-box").on("animationend", function() { 
+
+  // 1dep
+  let box = document.getElementById("box");
+  let images = document.querySelectorAll("#scroll2 .imgs:nth-of-type(1) img");
+    
+
+  setTimeout(() => {
+    box.style.backgroundColor = '#D9D9D9';
+  },200); // 0.2초 후에 박스 트랜지션
+
+  setTimeout(() => {
+    // hide 클래스를 추가하여 서서히 사라지게 만듦
+    images.forEach(img => img.classList.add('hide'));
+    box.classList.add('hide');  // box에도 hide 클래스를 추가
+  }, 1000);  // 1초 후에 사라짐
+
 
   // 2dep 
   
+  setTimeout(() => {
+    const secondDep = document.querySelector("#scroll2 .imgs:nth-of-type(2)");
+    secondDep.style.display = "block";  // display 값을 block으로 변경
+    
+    
   const deptext = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext");
   const deptext1 = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext1");
   const deptext2 = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext2");
-
-  // "보낼 금액"이 사라지는 애니메이션
-setTimeout(() => {
-  deptext.classList.add("hide"); // "보낼 금액"을 사라지게 함
-}, 1000);
-
-// "36,000원" 보이기
-setTimeout(() => {
-  deptext1.classList.add("show"); // "36,000원"이 보이게 함
-}, 2000); // 2초 후에 deptext1 보이기
-
-
- 
-  // 3dep 애니메이션 실행 함수
   
-  // svg 애니메이션
-  let path = document.querySelector("svg path");
-
+  let moneytext = document.getElementById("money");
+  
+  let moneyindex = ["3원","36원","360원","3,600원","36,000원"]
+  
   setTimeout(() => {
-    path.style.strokeDashoffset = "0";
-}, 600);
+    deptext.classList.add("hide"); // "보낼 금액"을 사라지게 함
+  }, 1000);
+  
+  // 2. 숫자 변경 애니메이션 (0.5초 간격으로 변경)
+  setTimeout(() => {
+    let index = 0;
+    
+    deptext1.style.opacity = "1";  
+    
+    let interval = setInterval(() => {
+      moneytext.textContent = moneyindex[index];
+      index++;
+      
+      if (index >= moneyindex.length) {
+        clearInterval(interval); // 마지막 숫자까지 변경되면 멈춤
+        setTimeout(() => {
+          deptext2.style.opacity = "1"; //  deptext2 나타나게 함
+        }, 200); // 멈춘후에 0.2초 후 deptext2 표시
+      }
+    }, 200); //0.2 초 간격으로 배열 이 나옴
+  }, 1500); // 1.5초 후에 배열 시작
+  
+}, 2000);  // 2 초 후에 display를 "block"으로 변경
+  
 
+setTimeout (() => {
+  const thirdDep = document.querySelector("#ani #scroll2 .imgs:nth-of-type(3)");
+    thirdDep.style.display = "block";  // display 값을 block으로 변경
+    
+    // 3dep 애니메이션 실행 함수
+    
+    // svg 애니메이션
+    let path = document.querySelector("svg path");
+    
+    setTimeout(() => {
+      path.style.strokeDashoffset = "0";
+    }, 1000);  
+    
+  },5000); //5 초 후에 display를 "block"으로 변경
 
+  });
 
+  // scroll4 img-box
+  $("#scroll4 .img-box").on("animationend", function() {
+    $("#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(1)").css({
+    "animation": "expandUp 2s ease-in-out forwards"
+    });
+    $("#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(4)").css({
+      "animation": "expandUp 2s ease-in-out forwards"
+      });
+      $("#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(5)").css({
+        "animation": "expandUp2 2s ease-in-out forwards"
+        });
 
+        let currentAmount = 2000000;
+        const targetAmount1 = 9000000;
+        const targetAmount2 = 8200000;
+        const countElement = document.getElementById("count");
+
+        
+  
+});
 
 // modla
 // 모달 요소와 버튼

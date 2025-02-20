@@ -210,6 +210,7 @@
   top: 500px;
 }
 
+/* 1dep */
 
 
 .imgs {
@@ -223,7 +224,6 @@
   border-radius:20px 20px 0px 0px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
-
 
 .imgs img:nth-child(1)  {
   width: 600px !important;
@@ -267,16 +267,36 @@
   left: 20px !important;
 }
 
+.imgs #box {
+  position:absolute;
+  top: 200px;
+  width: 390px;
+  height: 70px;
+  opacity: 0.5;
+}
+
+#scroll2 .imgs:nth-of-type(1) img,
+#scroll2 .imgs:nth-of-type(1) #box {
+  transition: opacity 1s;
+  transition:background-color 1s ease;
+}
+
+#scroll2 .imgs:nth-of-type(1) img.hide,
+#scroll2 .imgs:nth-of-type(1) #box.hide {
+  opacity: 0; /* opacity를 0으로 설정하여 사라지게 만듬 */
+  transition: 1s;
+}
+
+
+/* 2dep */
+
+
 #ani #scroll2 .imgs:nth-of-type(2) img {
   position: relative !important;
   top: 0px !important;
   left: 0px !important;
-  height: 80px !important;
-  
+  height: 80px !important;  
 }
-
-
-
 
 
 #ani #scroll2 .imgs:nth-of-type(2) img:nth-of-type(2) {
@@ -327,7 +347,7 @@
 }
 
 #ani #scroll2 .imgs:nth-of-type(2) .deptext {
-  transition: opacity 1s;
+  transition: opacity 0.2s;
 }
 
 #ani #scroll2 .imgs:nth-of-type(2) .deptext.hide {
@@ -336,22 +356,19 @@
 
 #ani #scroll2 .imgs:nth-of-type(2) .deptext1 ,.deptext2 {
   opacity: 0;
-  transition: opacity 1s;
-  display: none;
 }
 
-/* .show 클래스가 추가되면 요소가 보이도록 */
-#ani #scroll2 .imgs:nth-of-type(2) .deptext1.show,
-#ani #scroll2 .imgs:nth-of-type(2) .deptext2.show {
-  opacity: 1;
-  display: block; /* 보이게 설정 */
+#ani #scroll2 .imgs:nth-of-type(2) {
+ display: none; 
 }
+
 
 /* 3dep */
 
+
 svg {
   position: relative;
-  top: 70px;
+  top: 72px;
   left: 150px;
   width: 50px;
   height: 50px;
@@ -360,7 +377,7 @@ svg {
 path {
   stroke-dasharray: 100; /* 선의 전체 길이 */
   stroke-dashoffset: 100; /* 처음엔 선이 안 보이도록 설정 */
-  transition: stroke-dashoffset 2s linear;
+  transition: stroke-dashoffset 1.5s;
 }
 
 #ani #scroll2 .imgs:nth-of-type(3) div {
@@ -371,17 +388,21 @@ path {
   left: 163px;
   background: #FEE300;
   border-radius: 50%;
-  animation: grow 2s ease forwards;
+  animation: grow 2s  forwards;
 }
 
- /* 애니메이션 설정: 원이 커졌다 작아지는 효과 */
- @keyframes grow {
+/* 애니메이션 설정: 원이 커지는 효과 */
+@keyframes grow {
   0% {
-      transform: scale(0); /* 원래 크기 */
+    transform: scale(0); /* 원래 크기 */
   }
   100% {
-      transform: scale(2); /* 2배로 커짐 */
+    transform: scale(2); /* 2배로 커짐 */
   }
+}
+
+#ani #scroll2 .imgs:nth-of-type(3) {
+  display: none;
 }
 
 #ani #scroll2 .imgs:nth-of-type(3) img {
@@ -389,21 +410,13 @@ path {
   top: 200px !important;
   left: 5px !important;
   height: 180px !important;
-
+  opacity: 0;
 }
 
 #ani #scroll2 .imgs:nth-of-type(3) div:hover {
   transform: scale(2); /* 2배로 커짐 */
 }
 
-.imgs #box {
-  position:absolute;
-  top: 200px;
-  background: #D9D9D9;
-  width: 390px ;
-  height: 70px;
-  opacity: 0.5;
-}
 
 #ani .container:nth-child(3) {
   position: relative;
@@ -432,6 +445,163 @@ path {
   background: #F7F7F7;
   top: 1000px;
 }
+
+#ani .container:nth-child(4) .img-box img:nth-of-type(1) {
+  position: relative !important;
+  left: -2px !important;
+  top: -10px !important;
+  width: 100% !important; 
+  height: 80px !important;
+}
+
+#ani .container:nth-child(4) .img-box img:nth-of-type(2) {
+  position: relative;
+  left: 300px !important;
+  top: -5px !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div img {
+  height: 12px !important;
+  width: 12px !important;
+  position: relative !important;
+  left: 0px !important;
+  top: -6px !important;
+  margin-top: 8px;
+  margin-left: 6px;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(1) {
+  background: #FFE300;
+  position: absolute;
+  top: 340px;
+  width: 100%;
+  height: 800px;
+}
+
+@keyframes expandUp {
+  0% {
+    top: 340px;
+  }
+  30% {
+    top: 180px; /* 위로 올라가도록 설정 */
+  }
+  
+  60% {
+    top:180px;
+  }
+  90% {
+    top: 180px;
+  }
+  100% {
+    top: 200px;
+  }
+}
+
+@keyframes expandUp2 {
+  0% {
+    top: 320px;
+  }
+  30% {
+    top: 160px; /* 위로 올라가도록 설정 */
+  }
+  
+  60% {
+    top:160px;
+  }
+  90% {
+    top: 160px;
+  }
+  100% {
+    top: 180px;
+  }
+}
+
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(2) {
+  display: flex;
+  position: relative;
+  top: 100px;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(3) {
+  position: absolute;
+  left: 302px;
+  top: 110px;
+  width: 10px;
+  height: 270px;
+  background: #373737;
+  border-radius: 15px;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(4) {
+  position: absolute;
+  left: 302px;
+  top: 320px;
+  width: 10px;
+  height: 800px;
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(5) {
+  background: #FFFFFF;
+  position: absolute;
+  top: 320px;
+  left: 290px;
+  width: 35px;
+  height: 45px;
+  border-radius: 15px;
+  border: 1px solid #DDDDDD;
+}
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(1) {
+  display: inline-block;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 13px;
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(1) #count {
+  font-size: 38px;
+}
+
+
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(2) {
+  position: absolute !important;
+  left: 20px;
+  top: 300px;
+  width: 60px !important;
+  height: 30px !important;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 12px;
+  border: 1px solid #747474;
+}
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(3) {
+  position: absolute !important;
+  left: 90px;
+  top: 300px;
+  width: 60px !important;
+  height: 30px !important;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 12px;
+  border: 1px solid #747474;
+}
+
+
 
 #ani .container:nth-child(5) {
   position: relative;
