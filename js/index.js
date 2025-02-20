@@ -44,7 +44,7 @@ $(document).ready(function () {
                 entry.target.classList.add("animate__fadeInRight");
             } 
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.5 }); // target의 높이의 50%가 보이면
     observer1.observe(target1);
 
     // 스크롤 시 해외송금 이미지 아래에서 위로 나오는 애니메이션
