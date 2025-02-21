@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // ajax
   $.ajax({
-    url: "../data/history.json",
+    url: "data/history.json",
     success: function (data) {
       console.log(data);
 
