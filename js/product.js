@@ -1,40 +1,5 @@
 $(document).ready(function(){
   
-  // // 슬라이더
-
-  // $(".slider").slick({
-  //   slidesToShow: 3,        // 한 번에 보이는 텍스트 개수
-  //   slidesToScroll: 1,      // 몇 개씩 움직일지
-  //   autoplay: true,         // 자동 재생
-  //   autoplaySpeed: 0,       // 자동 재생 속도 (0으로 설정하여 끊김 없이 이동)
-  //   speed: 2000,            // 부드러운 흐름 속도 (높을수록 느려짐)
-  //   infinite: true,         // 무한 반복
-  //   cssEase: 'linear',      // 부드러운 이동 적용 (Marquee 효과)
-  //   variableWidth: true,    // 텍스트 크기에 맞춰 유동적 배치
-  // });
-
-  
-  const marquee = document.querySelector(".marquee");
-  const content = document.querySelector(".marquee-content");
-  
-  // 원본 콘텐츠 복제
-  const clone = content.cloneNode(true);
-  marquee.appendChild(clone);
-
-  let speed = 1; // 속도 조절
-  let pos = 0;
-
-  function moveMarquee() {
-    pos -= speed;
-    if (pos <= -content.clientWidth) {
-      pos = 0; // 원래 위치로 되돌림 (끊김 없이)
-    }
-    content.style.transform = `translateX(${pos}px)`;
-    clone.style.transform = `translateX(${pos}px)`;
-    requestAnimationFrame(moveMarquee);
-  }
-
-  moveMarquee();
 
 // ani
 
@@ -71,6 +36,7 @@ $(document).ready(function(){
 
   });
 
+  
   // 비디오가 애니메이션 후에 재생되도록 설정
   $(".img-box").on("animationend", function() {
     var videoElement = $(this).find("video")[0];
@@ -78,6 +44,147 @@ $(document).ready(function(){
       videoElement.play();  // 애니메이션 끝난 후 비디오 재생
     }
   });
+  
+  //#scroll2 .img-box가 애니메이션 된 후에 실행
+  $("#scroll2 .img-box").on("animationend", function() { 
+
+  // 1dep
+  let box = document.getElementById("box");
+  let images = document.querySelectorAll("#scroll2 .imgs:nth-of-type(1) img");
+    
+
+  setTimeout(() => {
+    box.style.backgroundColor = '#D9D9D9';
+  },200); // 0.2초 후에 박스 트랜지션
+
+  setTimeout(() => {
+    // hide 클래스를 추가하여 서서히 사라지게 만듦
+    images.forEach(img => img.classList.add('hide'));
+    box.classList.add('hide');  // box에도 hide 클래스를 추가
+  }, 1000);  // 1초 후에 사라짐
+
+
+  // 2dep 
+  
+  setTimeout(() => {
+    const secondDep = document.querySelector("#scroll2 .imgs:nth-of-type(2)");
+    secondDep.style.display = "block";  // display 값을 block으로 변경
+    
+    
+  const deptext = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext");
+  const deptext1 = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext1");
+  const deptext2 = document.querySelector("#ani #scroll2 .imgs:nth-of-type(2) .deptext2");
+  
+  let moneytext = document.getElementById("money");
+  
+  let moneyindex = ["3원","36원","360원","3,600원","36,000원"]
+  
+  setTimeout(() => {
+    deptext.classList.add("hide"); // "보낼 금액"을 사라지게 함
+  }, 1000);
+  
+  // 2. 숫자 변경 애니메이션 (0.5초 간격으로 변경)
+  setTimeout(() => {
+    let index = 0;
+    
+    deptext1.style.opacity = "1";  
+    
+    let interval = setInterval(() => {
+      moneytext.textContent = moneyindex[index];
+      index++;
+      
+      if (index >= moneyindex.length) {
+        clearInterval(interval); // 마지막 숫자까지 변경되면 멈춤
+        setTimeout(() => {
+          deptext2.style.opacity = "1"; //  deptext2 나타나게 함
+        }, 200); // 멈춘후에 0.2초 후 deptext2 표시
+      }
+    }, 200); //0.2 초 간격으로 배열 이 나옴
+  }, 1500); // 1.5초 후에 배열 시작
+  
+}, 2000);  // 2 초 후에 display를 "block"으로 변경
+  
+// 3dep
+setTimeout (() => {
+  const thirdDep = document.querySelector("#ani #scroll2 .imgs:nth-of-type(3)");
+    thirdDep.style.display = "block";  // display 값을 block으로 변경
+    
+    // 3dep 애니메이션 실행 함수
+    
+    // svg 애니메이션
+    let path = document.querySelector("svg path");
+    
+    setTimeout(() => {
+      path.style.strokeDashoffset = "0";
+    }, 1000);  
+    
+  },5000); //5 초 후에 display를 "block"으로 변경
+
+  });
+
+  // scroll4 img-box
+  $("#scroll4 .img-box").on("animationend", function() {
+    
+    
+    let counter = document.getElementById("count");
+    
+    function animateCountUp(start, end, duration) {
+      let increment = Math.ceil((end - start) / (duration)); // 증가량 계산
+      let current = start;
+          
+      
+      for (let i = 0; i <= duration; i++) {
+        setTimeout(() => {
+          current += increment; // 숫자 증가
+          if (current >= end) { // 목표값을 초과하면 끝내기
+            current = end;
+          }
+          counter.innerText = current.toLocaleString();
+        }, i ); 
+      }
+    }
+        
+         // 두 번째 애니메이션 함수 (9,000,000 → 8,200,000)
+    function animateCountDown(start, end, duration) {
+      let increment = Math.ceil((start - end) / (duration)); // 감소량 계산
+      let current = start;
+
+      for (let i = 0; i <= duration; i++) {
+          setTimeout(() => {
+              current -= increment; // 숫자 감소
+              if (current < end) { // 목표값을 초과하면 끝내기
+                  current = end;
+              }
+              counter.innerText = current.toLocaleString(); // 콤마 추가
+          }, i ); // 
+      }
+  }
+
+
+  // 이미 9,000,000이면 애니메이션 실행 안 함
+  if (counter.innerText === "9,000,000") {
+   return;
+   }
+  
+        // 실행: 2,000,000 → 9,000,000 (1초 동안)
+        animateCountUp(2000000, 9000000, 1000);
+  
+        // 1초 후에 9,000,000 → 8,200,000으로 애니메이션 실행
+        setTimeout(() => {
+          animateCountDown(9000000, 8200000, 500); // 0.5초 동안 8,200,000으로 도달
+      }, 2000); // 2초 후에 실행
+
+        
+        $("#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(1)").css({
+        "animation": "expandUp 2s ease-in-out forwards"
+        });
+        $("#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(4)").css({
+          "animation": "expandUp 2s ease-in-out forwards"
+          });
+          $("#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(5)").css({
+            "animation": "expandUp2 2s ease-in-out forwards"
+            });
+});
 
 // modla
 // 모달 요소와 버튼

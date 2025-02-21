@@ -1,3 +1,8 @@
+/* nav */
+
+.product-page #header.scrolled .nav_logo {
+  opacity: 1; /* product.html에서는 보이도록 설정 */
+}
 
 /* 카카오뱅크 입출금통장 */
 
@@ -49,7 +54,8 @@
 #main .container div p {
   color: #222222;
   font-weight: bold;
-  margin-top: -2px;
+  margin-top: -20px;
+  margin-right: 35px;
 }
 
 
@@ -73,31 +79,6 @@
 }
 
 /* 슬라이더 */
-
-/* #slider {
-  position: absolute;
-  width: 100%;
-  height: 252px;
-  overflow: hidden;
-  background-color: #23A662;
-}
-
-.slider div {
-  margin-top: 20px;
-  margin-left: -5px;
-  margin-right: -5px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #FFFFFF;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.slider .circle {
-  background: #FFFFFF;
-  color: #23A662;
-  border-radius: 30px;
-} */
 
 .marquee {
   position: relative;
@@ -229,6 +210,7 @@
   top: 500px;
 }
 
+/* 1dep */
 
 
 .imgs {
@@ -242,7 +224,6 @@
   border-radius:20px 20px 0px 0px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
-
 
 .imgs img:nth-child(1)  {
   width: 600px !important;
@@ -284,16 +265,158 @@
   height: 180px !important;
   top: 210px !important;
   left: 20px !important;
-  
 }
+
 .imgs #box {
   position:absolute;
   top: 200px;
-  background: #D9D9D9;
-  width: 390px ;
+  width: 390px;
   height: 70px;
   opacity: 0.5;
 }
+
+#scroll2 .imgs:nth-of-type(1) img,
+#scroll2 .imgs:nth-of-type(1) #box {
+  transition: opacity 1s;
+  transition:background-color 1s ease;
+}
+
+#scroll2 .imgs:nth-of-type(1) img.hide,
+#scroll2 .imgs:nth-of-type(1) #box.hide {
+  opacity: 0; /* opacity를 0으로 설정하여 사라지게 만듬 */
+  transition: 1s;
+}
+
+
+/* 2dep */
+
+
+#ani #scroll2 .imgs:nth-of-type(2) img {
+  position: relative !important;
+  top: 0px !important;
+  left: 0px !important;
+  height: 80px !important;  
+}
+
+
+#ani #scroll2 .imgs:nth-of-type(2) img:nth-of-type(2) {
+  position: relative !important;
+  width: 305px !important;
+  height: 50px !important;
+  left: 20px !important;
+  top: 180px !important;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) img:nth-of-type(3) {
+  position:  relative !important;
+  top: 180px !important;
+  left: 23px !important;
+  width: 300px !important;
+  height: 30px !important; 
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) img:nth-of-type(4) {
+  position:  relative !important;
+  top: 180px !important;
+  width: 350px !important;
+  height: 25px !important;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) div {
+  position: relative;
+  bottom: 70px;
+  left: 32%;
+  font-size: 30px;
+  color: #DADADA;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) div:nth-of-type(2) {
+  position: absolute !important;
+  top: 32% !important;
+  left: 32% !important;
+  font-size: 30px;
+  font-weight: bold;
+  color: #222222;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) div:nth-of-type(3) {
+  position:  absolute !important;
+  top: 43% !important;
+  left: 38%;
+  font-size: 15px;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) .deptext {
+  transition: opacity 0.2s;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) .deptext.hide {
+  opacity: 0;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) .deptext1 ,.deptext2 {
+  opacity: 0;
+}
+
+#ani #scroll2 .imgs:nth-of-type(2) {
+ display: none; 
+}
+
+
+/* 3dep */
+
+
+svg {
+  position: relative;
+  top: 72px;
+  left: 150px;
+  width: 50px;
+  height: 50px;
+}
+
+path {
+  stroke-dasharray: 100; /* 선의 전체 길이 */
+  stroke-dashoffset: 100; /* 처음엔 선이 안 보이도록 설정 */
+  transition: stroke-dashoffset 1.5s;
+}
+
+#ani #scroll2 .imgs:nth-of-type(3) div {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  top: 110px;
+  left: 163px;
+  background: #FEE300;
+  border-radius: 50%;
+  animation: grow 2s  forwards;
+}
+
+/* 애니메이션 설정: 원이 커지는 효과 */
+@keyframes grow {
+  0% {
+    transform: scale(0); /* 원래 크기 */
+  }
+  100% {
+    transform: scale(2); /* 2배로 커짐 */
+  }
+}
+
+#ani #scroll2 .imgs:nth-of-type(3) {
+  display: none;
+}
+
+#ani #scroll2 .imgs:nth-of-type(3) img {
+  position: absolute;
+  top: 200px !important;
+  left: 5px !important;
+  height: 180px !important;
+  opacity: 0;
+}
+
+#ani #scroll2 .imgs:nth-of-type(3) div:hover {
+  transform: scale(2); /* 2배로 커짐 */
+}
+
 
 #ani .container:nth-child(3) {
   position: relative;
@@ -322,6 +445,163 @@
   background: #F7F7F7;
   top: 1000px;
 }
+
+#ani .container:nth-child(4) .img-box img:nth-of-type(1) {
+  position: relative !important;
+  left: -2px !important;
+  top: -10px !important;
+  width: 100% !important; 
+  height: 80px !important;
+}
+
+#ani .container:nth-child(4) .img-box img:nth-of-type(2) {
+  position: relative;
+  left: 300px !important;
+  top: -5px !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div img {
+  height: 12px !important;
+  width: 12px !important;
+  position: relative !important;
+  left: 0px !important;
+  top: -6px !important;
+  margin-top: 8px;
+  margin-left: 6px;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(1) {
+  background: #FFE300;
+  position: absolute;
+  top: 340px;
+  width: 100%;
+  height: 800px;
+}
+
+@keyframes expandUp {
+  0% {
+    top: 340px;
+  }
+  30% {
+    top: 180px; /* 위로 올라가도록 설정 */
+  }
+  
+  60% {
+    top:180px;
+  }
+  90% {
+    top: 180px;
+  }
+  100% {
+    top: 200px;
+  }
+}
+
+@keyframes expandUp2 {
+  0% {
+    top: 320px;
+  }
+  30% {
+    top: 160px; /* 위로 올라가도록 설정 */
+  }
+  
+  60% {
+    top:160px;
+  }
+  90% {
+    top: 160px;
+  }
+  100% {
+    top: 180px;
+  }
+}
+
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(2) {
+  display: flex;
+  position: relative;
+  top: 100px;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(3) {
+  position: absolute;
+  left: 302px;
+  top: 110px;
+  width: 10px;
+  height: 270px;
+  background: #373737;
+  border-radius: 15px;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(4) {
+  position: absolute;
+  left: 302px;
+  top: 320px;
+  width: 10px;
+  height: 800px;
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(5) {
+  background: #FFFFFF;
+  position: absolute;
+  top: 320px;
+  left: 290px;
+  width: 35px;
+  height: 45px;
+  border-radius: 15px;
+  border: 1px solid #DDDDDD;
+}
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(1) {
+  display: inline-block;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 13px;
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(1) #count {
+  font-size: 38px;
+}
+
+
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(2) {
+  position: absolute !important;
+  left: 20px;
+  top: 300px;
+  width: 60px !important;
+  height: 30px !important;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 12px;
+  border: 1px solid #747474;
+}
+
+#ani .container:nth-child(4) .img-box .imgs span:nth-of-type(3) {
+  position: absolute !important;
+  left: 90px;
+  top: 300px;
+  width: 60px !important;
+  height: 30px !important;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 12px;
+  border: 1px solid #747474;
+}
+
+
 
 #ani .container:nth-child(5) {
   position: relative;
@@ -721,12 +1001,12 @@
 @media (max-width :1300px) {
   #main .container div:nth-child(1) p{
     position: relative;
-    top:5px;
+    top:15px;
     margin-right: 50px;
   }
   #main .container div:nth-child(2) p{
     position: relative;
-    top: 5px;
+    top: 15px;
     margin-right: 45px;
   }
   #ani .container .text-box {
