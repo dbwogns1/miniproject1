@@ -33,5 +33,5 @@ HTML, CSS, JavaScript, jQuery, AJAX, Bootstrap을 활용하여 개발하였습�
 ### 🐝 라이센스  
 본 프로젝트는 개인 학습 및 포트폴로오 용도로 제작되었습니다.
 
-### PPT
+### 🎞 PPT
 https://docs.google.com/presentation/d/1s2dPEXH7PTaynj4poTgOTtKzQ6aNVDKQiXL-FrxbjaQ/edit?usp=sharing
