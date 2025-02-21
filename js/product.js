@@ -127,9 +127,16 @@ setTimeout (() => {
     
     
     let counter = document.getElementById("count");
-    
+    let icCounting =false;
+
     function animateCountUp(start, end, duration) {
-      let increment = Math.ceil((end - start) / (duration)); // 증가량 계산
+
+      // 이미 9,000,000이면 애니메이션 실행 안 함
+      if (counter.innerText === "9,000,000") {
+        return;
+    }
+
+      let increment = Math.ceil((end - start) / duration + 1); // 증가량 계산
       let current = start;
           
       
@@ -138,16 +145,23 @@ setTimeout (() => {
           current += increment; // 숫자 증가
           if (current >= end) { // 목표값을 초과하면 끝내기
             current = end;
+            isCounting = false;
           }
           counter.innerText = current.toLocaleString();
-        }, i ); 
+        }, i);  
       }
     }
         
          // 두 번째 애니메이션 함수 (9,000,000 → 8,200,000)
     function animateCountDown(start, end, duration) {
-      let increment = Math.ceil((start - end) / (duration)); // 감소량 계산
+      let increment = Math.ceil((start - end) / duration + 1); // 감소량 계산
       let current = start;
+
+      if (counter.innerText === "8,200,000") {
+        return;
+      }
+
+      isCounting = true; // 카운팅 시작
 
       for (let i = 0; i <= duration; i++) {
           setTimeout(() => {
@@ -156,23 +170,24 @@ setTimeout (() => {
                   current = end;
               }
               counter.innerText = current.toLocaleString(); // 콤마 추가
+
+              // 애니메이션 종료
+            if (current === end) {
+              isCounting = false;
+            }
           }, i ); // 
       }
   }
 
-
-  // 이미 9,000,000이면 애니메이션 실행 안 함
-  if (counter.innerText === "9,000,000") {
-   return;
-   }
   
         // 실행: 2,000,000 → 9,000,000 (1초 동안)
-        animateCountUp(2000000, 9000000, 1000);
+        animateCountUp(2000000, 9000000, 500);
   
         // 1초 후에 9,000,000 → 8,200,000으로 애니메이션 실행
         setTimeout(() => {
           animateCountDown(9000000, 8200000, 500); // 0.5초 동안 8,200,000으로 도달
       }, 2000); // 2초 후에 실행
+
 
         
         $("#ani .container:nth-child(4) .img-box .imgs div:nth-of-type(1)").css({
