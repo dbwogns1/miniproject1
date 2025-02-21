@@ -7,27 +7,22 @@ body {
   color: #333;
 }
 
-header {
-  background-color: #ffe100; /* 카카오뱅크 노란색 */
-  height: 33vh; /* 화면의 3분의 1 높이로 설정 */
-  padding: 0;
-}
 
 .cont{
   background-color: #ffe100;
-  height: 425px;
+  height: 400px;
 
 }
 .container {
   max-width: 900px;
   margin: 20px auto;
-  padding: 95px 0px;
+  padding: 61.5px 0px;
   background-color: #ffe100;
   
 }
 
 
-.tab-content mt-3 {
+.tab-contentmt-3 {
   border-radius: 25px;
   border: none;
   padding: 500px 100px;
@@ -36,11 +31,13 @@ header {
   margin-bottom: 20px;
   transition: border 0.3s, box-shadow 0.3s;
   border: #ffffff;
+  
 }
 
 #faqAccordion1.accordion {
   width: 1000px;
   margin: 0 auto;
+  
 }
 
 #faqAccordion2.accordion {
@@ -70,12 +67,19 @@ input.form-control:focus {
   box-shadow: 0 0 8px rgba(255, 205, 0, 0.6);
 }
 
+li.nav-item .nav-link {
+  color: black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    /* margin: 0 auto
+    ; */
+}
 
 
 /* 네비게이션 스타일 */
 
 .navbar {
-  background-color: #c9c9c9; /* 카카오뱅크 주황색 */
+  background-color: #ffe100;/* 카카오뱅크 주황색 */
   padding: 15px 0;
 }
 
@@ -91,17 +95,22 @@ input.form-control:focus {
   font-weight: 500;
 
 }
-.nav {
-  background-color: white !important;
-}
 
-.nav-tabs {
-  background-color: white !important;
-}
+
 
 /* .navbar-nav .nav-link:hover {
   color: #969696;
 } */
+
+
+
+.nav-tabs .nav-link:focus,  
+
+.nav-tabs .nav-link.active {
+  outline: 0.5px solid #000; /* 검은색 실선 */
+  
+}
+
 
 .navbar-nav .nav-link.active {
   color: #969696;
@@ -114,17 +123,16 @@ input.form-control:focus {
   transition: border-color 0.3s;
 }
 
-/* .nav-pills .nav-link.active {
+.nav-pills .nav-link.active {
   border-color: #ffffff;
   color: #ffffff;
 } */
 
-/* .nav-pills .nav-link:hover {
+.nav-pills .nav-link:hover {
   border-color: #ffffff;
-} */
+}
 
-/* FAQ 아코디언 */
-/* 기본 상태 - 배경색 없음 */
+
 
 .accordion-button {
   background-color: transparent !important; /* 배경색 투명 */
@@ -141,8 +149,11 @@ input.form-control:focus {
 /* 자식(답변) 부분의 배경색을 부모와 동일하게 설정 + 패딩 조정 */
 .accordion-body {
   background-color: #f8f9fa !important; /* 동일한 연한 회색 */
-  padding: 15px; /* 가독성을 위해 패딩 추가 */
+  padding: 30px; /* 가독성을 위해 패딩 추가 */
+  line-height: 2.1;
+  
 }
+
 
 
 .search_icon {
@@ -232,6 +243,7 @@ li.nav-item  .nav-link {
 .nav item {
   display: flex;
   width: 20px;
+  /* color: #ffe100; */
 }
 element.style {
   
@@ -280,8 +292,23 @@ element.style {
 }
 .title div {
   width: 1000px;
+
+
   display: block;
   margin: 0 auto;
   margin-top: 40px;
   font-size: 18px;
+}
+
+/* 네비게이션 바 - 별도 적용 부분*/
+
+#header {
+  background-color: #ffe100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.186);
+  transition: 400ms;
+}
+#header .dropdown_btn {
+  background: #F6F3DD;
+  border: 1px solid rgba(34, 34, 34, 0.1);
+  transition: 400ms;
 }
